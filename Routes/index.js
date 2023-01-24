@@ -3,6 +3,11 @@ import { GetPeople, InsertPerson, UpdatePerson, DeletePerson} from "../Controlle
 
 const router = Router();
 
+/* 
+For the post, put, and delete requests, the "req" object is passed into the methods 
+to provide the methods in the ./Controllers/crud.js access to the request body
+*/
+
 // Returns all person in the database
 router.get("/", async(req, res) => {
     const data = await GetPeople();
