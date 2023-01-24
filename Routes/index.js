@@ -4,7 +4,7 @@ import { GetPeople, InsertPerson, UpdatePerson, DeletePerson} from "../Controlle
 const router = Router();
 
 
-router.get("/", async(req, res, next) => {
+router.get("/", async(req, res) => {
     const data = await GetPeople();
     res.json(data);
 })
@@ -21,11 +21,6 @@ router.delete("/removePerson/:Id", async(req, res) => {
     const deletedPerson = await DeletePerson(req);
     res.json(deletedPerson)
 })
-
-
-
-
-
 
 export default router
 
