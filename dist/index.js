@@ -10,7 +10,7 @@ const URI = "mongodb://127.0.0.1:27017/newDb";
 app.use(_express.default.urlencoded({
   extended: false
 }));
-app.get("/", _index.default);
+app.use("/", _index.default);
 try {
   _mongoose.default.connect(URI);
   app.listen(PORT, () => {
